@@ -1,1 +1,1 @@
-web: bin/boot
+web: gunicorn ian_analytics.wsgi
