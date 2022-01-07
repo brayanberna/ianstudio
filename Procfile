@@ -1,1 +1,1 @@
-web: npm start
+web: gunicorn ian_analytics.wsgi
