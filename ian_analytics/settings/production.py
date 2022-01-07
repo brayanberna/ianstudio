@@ -11,10 +11,10 @@ ALLOWED_HOSTS = ['ianstudio.herokuapp.com']
 DATABASES = {
         'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd5rmus0asf6m81',
-        'USER': 'zsrsfxffzupcpw',
-        'PASSWORD': '47023630f288bf04463e8ba0cbe5241ea0230e8f652038ede352647dcc99a661',
-        'HOST':'ec2-35-168-73-79.compute-1.amazonaws.com',
+        'NAME': 'd1r3rv9lktnrvn',
+        'USER': 'npgdrafketfizt',
+        'PASSWORD': 'aba7f21bd1c626f4de8cbd7836694a24f705f2140ea7fa9ac786478e7ffdcd4d',
+        'HOST':'ec2-34-206-245-175.compute-1.amazonaws.com',
         'DATABASE_PORT':'5432',
    }
 }
