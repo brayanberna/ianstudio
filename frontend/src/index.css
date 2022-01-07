@@ -1,0 +1,344 @@
+body {
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header {
+  padding: 1em 0;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 6;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid rgba(135,153,160,0.25);
+  border-bottom: 1px solid #E1EDFF;
+}
+
+.header_logo {
+  align-self: center;
+  user-select: none;
+}
+
+.menu_checkbox{
+  display: none;
+}
+
+.menu_checkbox:checked ~ .menu_button {
+background: url('https://leonidasesteban.github.io/easybank-learning-sass/static/images/icon-close.svg') no-repeat center;
+}
+
+.menu_checkbox:checked ~ .menu {
+  display: block;
+  position: absolute;
+  top: 100%;
+  padding: 1em;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, hsl(233, 26%, 24%) 0%, transparent 90%);
+}
+
+.menu_item {
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 4px;
+  transition: all 250ms ease 0s;
+}
+
+.menu_item:hover {
+  /* border: 1px solid #32466e; */
+}
+
+.menu_checkbox:checked ~ .menu .menu_item:first-child a{
+  padding-top: 1em;
+  border-radius: .5em .5em 0 0;
+}
+
+.menu_checkbox:checked ~ .menu .menu_item:last-of-type a{
+  padding-bottom: 1em;
+  border-radius: 0 0 .5em .5em;
+}
+
+.menu_checkbox:checked ~ .menu a{
+  background: white;
+  padding: .8em 1em;
+  color: hsl(233, 26%, 24%);
+  font-size: 1.1em;
+  display: block;
+  text-align: center;
+  flex: 1;
+}
+
+.menu_checkbox:checked ~ .menu a:hover{
+  background: #f1f3f4;
+}
+
+.wrapper_header {
+  margin: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header_content {
+  display: grid;
+  grid-template-columns: 239px 1fr;
+  justify-items: center;
+  align-items: center;
+  min-height: 41.3px;
+}
+
+.logo {
+  display: flex;
+  position: relative;
+  font-size: 22px;
+  font-weight: 900;
+  color: #2D314D;
+  color: #3f69ff;
+  color: #33466E;
+  letter-spacing: 2px;
+  align-items: center;
+  font-family: 'Wallpoet', cursive;
+}
+
+.menu {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu a {
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  color: #9698a6;
+  padding: 0 .8em;
+  transition: .15s;
+  user-select: none;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.menu a:hover{
+  color: #1B2D55;
+  color: #2FC1BC;
+  color: #099CEC;
+  color: #3cf;
+  text-decoration: underline;
+}
+
+.menu_button {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background: url('https://leonidasesteban.github.io/easybank-learning-sass/static/images/icon-hamburger.svg') no-repeat center;
+}
+
+.header_button {
+  font-family: 'Montserrat', sans-serif !important;
+  /* font-family: 'Rubik', sans-serif; */
+  display: none;
+  border: none;
+  padding: 0.7em 1em;
+  color: white;
+  letter-spacing: 0.0125em;
+  background: #3f69ff;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 1em;
+  cursor: pointer;
+  user-select: none;
+  min-height: 41.3px;
+}
+
+.header_button:hover {
+  background: #3256d5;
+}
+
+@media screen and (min-width: 1024px) {
+  .menu {
+    display: flex;
+  }
+
+  .header_button {
+    display: inline;
+  }
+
+  .menu_button {
+    display: none;
+  }
+
+}
+
+.hero_content {
+  position: relative;
+  display: grid;
+}
+
+.home_content {
+  position: absolute;
+  top: 73px;
+  height: 100%;
+  width: calc(100% - 240px);
+  left: 240px;
+  transition: all 0.5s ease;
+}
+.menu_vert_checkbox:checked ~ .home_content {
+  width: calc(100% - 76px);
+  left: 76px;
+  background: red;
+}
+
+
+
+
+.sidebar {
+  position: fixed;
+  top: 73px;
+  left: 0;
+  height: calc(100% - 73px);
+  width: 240px;
+  background: #12192C;
+  transition: all 0.5s ease;
+  color: #fff;
+  /* z-index: 100; */
+  box-sizing: border-box;
+  padding: 1em 1em 1em;
+  background: #081736;
+}
+
+.menu_vert_checkbox:checked ~ .sidebar {
+  width: 76px;
+}
+
+.menu_vert_checkbox {
+  display: none;
+}
+
+
+.sidebar .navbar_vert {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+
+.sidebar .nav_list {
+  list-style: none;
+}
+
+.sidebar ul {
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  border-radius: 12px;
+}
+
+.sidebar ul li:hover {
+  color: #fff;
+  background: #0C5DF4;
+  transition: all 0.4s ease;
+}
+
+.sidebar ul li a {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: .75rem;
+  color: white;
+  transition: .3s;
+  text-decoration: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+
+.sidebar ul li a .icon {
+  font-size: 1.25rem;
+  padding: .75rem;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.sidebar ul li a span {
+  font-size: .875rem;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+}
+
+.collapse {
+  display: grid;
+  grid-template-columns: max-content max-content 0.9fr !important;
+}
+
+.collapse_link {
+  justify-self: flex-end;
+  transition: .5;
+}
+
+.collapse_link {
+  font-size: 16px;
+  transition: .5s;
+}
+
+
+
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.sidebar ul li .collapse_menu {
+  padding: 0rem 3.4rem;
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.sidebar ul li .collapse_menu.active {
+  display: block;
+  height: 77px;
+  
+}
+
+.menu_vert_checkbox:checked ~ .sidebar ul li .collapse_menu.active {
+  height: 0px;
+  overflow: hidden;
+}
+
+.collapse_sublink {
+  color: #B6CEFC !important;
+  font-size: .875rem;
+  font-weight: 500;
+  padding: 0 0 4px 0;
+}
+
+.collapse_sublink:hover {
+  color: white !important;
+}
+
+
+html {
+  background: #FAFAFA;
+}
+
+.wrapper_content {
+  background: #f1f5f9;
+  background: #f8f8f8;
+  background: #F4F5F8;
+  background: #fafbfc;
+  background: #F7F7F8;
+  background: #FAFAFA;
+  /* background: #f7faff; */
+  padding: 24px 48px;
+  margin: auto;
+  width: 100%;
+  box-sizing: border-box;
+}

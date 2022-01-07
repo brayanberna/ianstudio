@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app"/>
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+    <title>React App</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="header">
+      <div class="wrapper_header">
+        <div class="header_content">
+          <div>
+            <a class="logo">IAN STUDIO<i class='bx bx-share-alt'></i></a>
+            <input type="checkbox" id="menu" class="menu_checkbox">
+          </div>
+          <div>
+            <ul class="menu">
+              <li class="menu_item">
+                <a href="">Home</a>
+              </li>
+              <!-- <li class="menu_item">
+                <a href="">About</a>
+              </li> -->
+              <li class="menu_item">
+                <a href="">Contact</a>
+              </li>
+              <!-- <li class="menu_item">
+                <a href="">Blog</a>
+              </li> -->
+              <!-- <li class="menu_item">
+                <a href="">Careers</a>
+              </li> -->
+            </ul>
+          </div>
+          <!-- <button class="header_button">Inicia sesión</button> -->
+          <!-- <label class="menu_button" for="menu"><i class='bx bx-menu icon' id="btn"></i></label> -->
+          <label class="menu_button" for="menu"></label>
+        </div>
+      </div>
+    </header>
+
+    
+    <!-- CONTENIDO -->
+    <div class="hero_content">
+      <input type="checkbox" id="checkbox_menu_vert" class="menu_vert_checkbox">
+      <div class="sidebar">
+        <div class="navbar_vert">
+          <ul class="nav_list">
+            <li>
+              <a href="#">
+                <label for="checkbox_menu_vert"><i class='bx bx-menu icon' id="btn"></i></label>
+                <span class="links_name">Minimize Menu</span>
+              </a>
+              <!-- <span class="tooltip">Menú</span> -->
+            </li>
+
+            <li>
+              <a href="#">
+                <i class='bx bx-columns icon'></i>
+                <span class="links_name">Datasets</span>
+              </a>
+              <!-- <span class="tooltip">Dashboard</span> -->
+            </li>
+
+            <li>
+              <a href="#">
+                <i class='bx bxs-analyse icon'></i>
+                <span class="links_name">Data Cleaning</span>
+              </a>
+              <!-- <span class="tooltip">User</span> -->
+            </li>
+
+            <!-- <li>
+              <a href="#" class="collapse">
+                <i class='bx bx-pie-chart-alt icon'></i>
+                <span class="links_name">Analytics</span>
+
+                <i class='bx bxs-chevron-down collapse_link'></i>
+
+                <ul class="collapse_menu">
+                  <a href="" class="collapse_sublink">Data</a>
+                  <a href="" class="collapse_sublink">Group</a>
+                  <a href="" class="collapse_sublink">Members</a>
+                </ul>
+              </a>
+            </li> -->
+
+            <!-- <li>
+              <a href="#">
+                <i class='bx bx-folder icon'></i>
+                <span class="links_name">File Manager</span>
+              </a>
+            </li> -->
+
+            <!-- <li>
+              <a href="#">
+                <i class='bx bx-cart-alt icon' ></i>
+                <span class="links_name">Order</span>
+              </a>
+            </li> -->
+            <!-- <li>
+              <a href="#">
+                <i class='bx bx-heart icon'></i>
+                <span class="links_name">Saved</span>
+              </a>
+            </li> -->
+            <!-- <li>
+              <a href="#">
+                <i class='bx bxs-cog icon'></i>
+                <span class="links_name">Setting</span>
+              </a>
+            </li> -->
+          </ul>
+
+          <ul class="nav_list">
+            <!-- <li>
+              <a href="#">
+                <i class='bx bx-log-out icon'></i>
+                <span class="links_name">Log Out</span>
+              </a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="home_content">
+        <div class="wrapper_content">
+          <div id="root"></div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+
+  <script>
+    window.addEventListener("resize", function(){
+        if (document.documentElement.clientWidth > 1024) {
+          document.getElementById("menu").checked = false;
+        }
+        else {
+          //
+        }
+    }, true);
+  </script>
+
+  <script>
+    let btn_collapse = document.querySelector(".collapse_link")
+
+    btn_collapse.onclick = function() {
+      this.parentElement.nextElementSibling.classList.toggle("active")
+      this.classList.toggle("rotate")
+      //this.parentNode.parentNode.classList.toggle("active") //Example
+    }
+  </script>
+</html>

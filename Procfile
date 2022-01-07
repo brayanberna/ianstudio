@@ -1,0 +1,1 @@
+web: gunicorn ian_analytics.wsgi
