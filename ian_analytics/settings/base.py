@@ -44,8 +44,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            #os.path.join(BASE_DIR, 'frontend/build')
-            os.path.join(BASE_DIR, '../frontend/build')
+            #os.path.join(BASE_DIR, 'frontend/build') # Local
+            os.path.join(BASE_DIR, '../frontend/build') # Producción
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -106,17 +106,17 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [
-    #os.path.join(BASE_DIR, 'frontend/build/static'),
-    os.path.join(BASE_DIR, '../frontend/build/static'),
+    #os.path.join(BASE_DIR, 'frontend/build/static'), # Local
+    os.path.join(BASE_DIR, '../frontend/build/static'), # Producción
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000",
+    #"http://localhost:3000",
     #"ianstudio.herokuapp.com",
-    #"https://ianstudio.herokuapp.com/",
+    "https://ianstudio.herokuapp.com/",
 ]
 
 
 MEDIA_URL = '/files/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/public/files')
-MEDIA_ROOT = os.path.join(BASE_DIR, '../frontend/public/files')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/public/files') # Local
+MEDIA_ROOT = os.path.join(BASE_DIR, '../frontend/public/files') # Producción
