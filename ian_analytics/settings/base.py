@@ -44,7 +44,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'frontend/build')
+            os.path.join(BASE_DIR, 'templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -109,9 +109,9 @@ STATICFILES_DIRS = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    #"http://localhost:3000",
+    "http://localhost:3000",
     #"ianstudio.herokuapp.com",
-    "https://ianstudio.herokuapp.com/",
+    #"https://ianstudio.herokuapp.com/",
 ]
 
 #MEDIA_URL = 'frontend/public/files/'
