@@ -15,6 +15,8 @@ def index(request):
     'Create':'/task-create/',
     'Update':'/task-update/<str:pk>/',
     'Delete':'/task-delete/<str:pk>/',
+    'detectar_tipo_red_neuronal': '/detect_type_neuronal/',
+    'cargar_dataset': '/load_data/',
   }
 
   return Response(api_urls)
