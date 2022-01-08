@@ -45,7 +45,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             #os.path.join(BASE_DIR, 'frontend/build')
-            os.path.join(BASE_DIR, '../frontend/public')
+            os.path.join(BASE_DIR, '../frontend/build')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -106,8 +106,8 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontend/build/static'),
-    #os.path.join(BASE_DIR, '../frontend/public/static'),
+    #os.path.join(BASE_DIR, 'frontend/build/static'),
+    os.path.join(BASE_DIR, '../frontend/build/static'),
 ]
 
 CORS_ORIGIN_WHITELIST = [
@@ -118,5 +118,5 @@ CORS_ORIGIN_WHITELIST = [
 
 
 MEDIA_URL = '/files/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/public/files')
-#MEDIA_ROOT = os.path.join(BASE_DIR, '../frontend/public/files')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/public/files')
+MEDIA_ROOT = os.path.join(BASE_DIR, '../frontend/public/files')
