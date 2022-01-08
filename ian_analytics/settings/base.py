@@ -121,4 +121,8 @@ MEDIA_URL = '/files/'
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/public/files') # Local
 MEDIA_ROOT = os.path.join(BASE_DIR, '../frontend/public/files') # Producción
 
+
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_COOKIE_NAME = "csrftoken"
