@@ -1,1 +1,1 @@
-web: gunicorn ian_analytics.asgi
+web: gunicorn ian_analytics.wsgi

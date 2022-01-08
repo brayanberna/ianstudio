@@ -121,11 +121,4 @@ MEDIA_URL = '/files/'
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/public/files') # Local
 MEDIA_ROOT = os.path.join(BASE_DIR, '../frontend/public/files') # Producción
 
-
-ASGI_APPLICATION = 'ian_analytics.routing.application'
-
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
-    }
-}
+CORS_ORIGIN_ALLOW_ALL = True
