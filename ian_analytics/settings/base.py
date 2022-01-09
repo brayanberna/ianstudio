@@ -111,11 +111,10 @@ STATICFILES_DIRS = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000",
+    #"http://localhost:3000",
     #"ianstudio.herokuapp.com",
-    #"https://ianstudio.herokuapp.com",
+    "https://ianstudio.herokuapp.com",
 ]
-
 
 MEDIA_URL = '/files/'
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/public/files') # Local
