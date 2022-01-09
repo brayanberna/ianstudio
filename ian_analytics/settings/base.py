@@ -122,10 +122,10 @@ MEDIA_URL = '/files/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '../frontend/public/files') # Producción
 
 
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = True
+#CORS_ORIGIN_ALLOW_ALL = True
+#CORS_ALLOW_CREDENTIALS = True
 
-CSRF_COOKIE_NAME = "csrftoken"
+#CSRF_COOKIE_NAME = "csrftoken"
 
-import django_heroku
-django_heroku.settings(locals())
+#import django_heroku
+#django_heroku.settings(locals())
