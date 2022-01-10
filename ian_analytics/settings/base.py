@@ -3,7 +3,8 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 #BASE_DIR = Path(__file__).resolve().parent.parent
-BASE_DIR = Path(__file__).resolve().root.root
+#BASE_DIR = Path(__file__).resolve().root.root
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 
@@ -112,8 +113,8 @@ STATICFILES_DIRS = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    #"http://localhost:3000",
-    #"ianstudio.herokuapp.com",
+    "http://localhost:3000",
+    "http://127.0.0.1:8000"
     "https://ianstudio.herokuapp.com",
 ]
 
