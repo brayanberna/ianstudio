@@ -106,7 +106,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [
     #os.path.join(BASE_DIR, 'frontend/build/static'), # Local
-    os.path.join(BASE_DIR, '../frontend/build/static'), # Producción
+    #os.path.join(BASE_DIR, '../frontend/build/static'), # Producción
+    os.path.join(BASE_DIR, '../frontend/public/static'), # Producción
 ]
 
 CORS_ORIGIN_WHITELIST = [
