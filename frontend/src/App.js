@@ -112,7 +112,9 @@ class App extends React.Component {
       }
     }
     var csrftoken = this.getCookie('csrftoken')
-    var url = 'http://127.0.0.1:8000/run_red_neuronal/'
+    /* var url = 'http://127.0.0.1:8000/run_red_neuronal/' */
+    var url = 'https://ianstudio.herokuapp.com/run_red_neuronal/'
+
     fetch(url, {
       method:'POST',
       headers:{
@@ -143,7 +145,8 @@ class App extends React.Component {
 
   // Listando Tasks
   fetchTasks(){
-    fetch('http://127.0.0.1:8000/task-list/')
+    /* fetch('http://127.0.0.1:8000/task-list/') */
+    fetch('https://ianstudio.herokuapp.com/task-list/')
     .then(response => response.json())
     .then(data =>
       this.setState({
@@ -238,10 +241,12 @@ class App extends React.Component {
     /* csrftoken */
     var csrftoken = this.getCookie('csrftoken')
 
-    var url = 'http://127.0.0.1:8000/task-create/'
+    /* var url = 'http://127.0.0.1:8000/task-create/' */
+    var url = 'https://ianstudio.herokuapp.com/task-create/'
 
     if(this.state.editing == true){  /* EDITANDO */
-      url = `http://127.0.0.1:8000/task-update/${this.state.activeItem.id}/`
+      /* url = `http://127.0.0.1:8000/task-update/${this.state.activeItem.id}/` */
+      url = `https://ianstudio.herokuapp.com//task-update/${this.state.activeItem.id}/`
       this.setState({
         editing:false
       })
@@ -281,7 +286,8 @@ class App extends React.Component {
   deleteItem(task){
     var csrftoken = this.getCookie('csrftoken')
 
-    fetch(`http://127.0.0.1:8000/task-delete/${task.id}/`, {
+    /* fetch(`http://127.0.0.1:8000/task-delete/${task.id}/`, { */
+    fetch(`https://ianstudio.herokuapp.com/task-delete/${task.id}/`, {
       method:'DELETE',
       headers:{
         'Content-type':'application/json',
@@ -296,7 +302,8 @@ class App extends React.Component {
   strikeUnstrike(task){
     task.completed = !task.completed
     var csrftoken = this.getCookie('csrftoken')
-    var url = `http://127.0.0.1:8000/task-update/${task.id}/`
+    /* var url = `http://127.0.0.1:8000/task-update/${task.id}/` */
+    var url = `https://ianstudio.herokuapp.com/task-update/${task.id}/`
       fetch(url, {
         method:'POST',
         headers:{
@@ -381,7 +388,8 @@ class App extends React.Component {
 
       e.preventDefault()
       var csrftoken = this.getCookie('csrftoken')
-      var url = 'http://127.0.0.1:8000/detect_type_neuronal/'
+      /* var url = 'http://127.0.0.1:8000/detect_type_neuronal/' */
+      var url = 'https://ianstudio.herokuapp.com/detect_type_neuronal/'
       fetch(url, {
         method:'POST',
         headers:{
@@ -565,7 +573,8 @@ class App extends React.Component {
     console.log(this.state.consult_red_neuronal)
     e.preventDefault()
     var csrftoken = this.getCookie('csrftoken')
-    var url = 'http://127.0.0.1:8000/consult_red_neuronal/'
+    /* var url = 'http://127.0.0.1:8000/consult_red_neuronal/' */
+    var url = 'https://ianstudio.herokuapp.com/consult_red_neuronal/'
     fetch(url, {
       method:'POST',
       headers:{
