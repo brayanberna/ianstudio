@@ -206,8 +206,8 @@ class App extends React.Component {
     formData.append('dir_excel',this.state.dir_excel)
 
     var csrftoken = this.getCookie('csrftoken')
-    /* var url = 'http://127.0.0.1:8000/load_data/' */
-    var url = 'https://ianstudio.herokuapp.com/load_data/'
+    var url = 'http://127.0.0.1:8000/load_data/'
+    /* var url = 'https://ianstudio.herokuapp.com/load_data/' */
     fetch(url, {
       method:'POST',
       headers:{
