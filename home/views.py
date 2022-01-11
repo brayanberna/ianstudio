@@ -188,7 +188,7 @@ def detect_type_neuronal(request):
       """ Se envían los datos al Frontend """
       data = [{
         'tipo_red_neuronal': 'number', # Tipo de Red Neuronal
-        'hidden_cap1': 256
+        'hidden_cap1': 32
       }]
 
     if(dataframe[request.data["target_predecir"]].dtype == object):
@@ -411,7 +411,8 @@ def run_red_neuronal(request):
     """ ENTRENAMIENTO DEL MODELO """
     early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=100, restore_best_weights=True)
 
-    history = model.fit(train_ds, epochs=100, validation_data=val_ds, verbose=1, callbacks=[early_stop])
+    #history = model.fit(train_ds, epochs=200, validation_data=val_ds, verbose=1, callbacks=[early_stop]) # Local
+    history = model.fit(train_ds, epochs=100, validation_data=val_ds, verbose=1, callbacks=[early_stop]) # Producción
 
 
     ### Gráficos del entrenamiento
@@ -756,7 +757,7 @@ def run_red_neuronal(request):
       early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=90)
 
       #history = model.fit(train_ds, epochs=1000, # local
-      history = model.fit(train_ds, epochs=500, # Producción
+      history = model.fit(train_ds, epochs=450, # Producción
                           validation_data=val_ds, verbose=0, callbacks=[early_stop])
 
 
@@ -997,7 +998,6 @@ def run_red_neuronal(request):
 
       """ MODELO DE LA RED NEURONAL """
       all_features = tf.keras.layers.concatenate(encoded_features)
-      #x = tf.keras.layers.Dense(32, activation="relu")(all_features)
       x = tf.keras.layers.Dense(256, activation="relu")(all_features)
       x = tf.keras.layers.Dropout(0.5)(x)
       output = tf.keras.layers.Dense(cantidad_posibles_predicciones)(x)
@@ -1017,7 +1017,7 @@ def run_red_neuronal(request):
       """ ENTRENAMIENTO DEL MODELO """
       early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=100, restore_best_weights=True)
 
-      history = model.fit(train_ds, epochs=200, validation_data=val_ds, verbose=1, callbacks=[early_stop])
+      history = model.fit(train_ds, epochs=200, validation_data=val_ds, verbose=0, callbacks=[early_stop])
       #history = model.fit(train_ds, epochs=1, validation_data=val_ds, verbose=1, callbacks=[early_stop])
 
       ### Gráficos del entrenamiento
