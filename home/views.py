@@ -408,6 +408,7 @@ def run_red_neuronal(request):
     """ Gráfico de conectividad """
     from keras.utils.vis_utils import plot_model
     tf.keras.utils.plot_model(model, to_file='./frontend/public/files/Connectivity_graph.png', show_shapes=True, rankdir="LR")
+    #keras.utils.vis_utils.plot_model(model, to_file='./frontend/public/files/Connectivity_graph.png', show_shapes=True, rankdir="LR")
 
     # pasos para cargar la imagen y transformarla en svg
     from io import StringIO
@@ -1045,6 +1046,8 @@ def run_red_neuronal(request):
       from tensorflow.keras.utils import plot_model
       tf.keras.utils.plot_model(model, to_file='./frontend/public/files/Connectivity_graph.png', show_shapes=True, rankdir="LR")
 
+      #from keras.utils.vis_utils import plot_model
+      #plot_model(model, to_file='./frontend/public/files/Connectivity_graph.png', show_shapes=True, rankdir="LR")
 
       """ ENTRENAMIENTO DEL MODELO """
       early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=100, restore_best_weights=True)
