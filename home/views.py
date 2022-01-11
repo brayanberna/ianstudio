@@ -404,12 +404,10 @@ def run_red_neuronal(request):
                   metrics=["accuracy"])
 
 
-
     """ Gráfico de conectividad """
     from keras.utils.vis_utils import plot_model
     tf.keras.utils.plot_model(model, to_file='./frontend/public/files/Connectivity_graph.png', show_shapes=True, rankdir="LR")
     #keras.utils.vis_utils.plot_model(model, to_file='./frontend/public/files/Connectivity_graph.png', show_shapes=True, rankdir="LR")
-
 
 
     """ ENTRENAMIENTO DEL MODELO """
