@@ -698,25 +698,8 @@ def run_red_neuronal(request):
                     metrics=['mae', 'mse'])
 
 
-
       """ Gráfico de conectividad """
       tf.keras.utils.plot_model(model, to_file='./frontend/public/files/Connectivity_graph.png', show_shapes=True, rankdir="LR")
-
-      # pasos para cargar la imagen y transformarla en svg
-      from io import StringIO
-      import matplotlib.image as mpimg
-
-      fig = plt.figure()
-      img = mpimg.imread('./frontend/public/files/Connectivity_graph.png')
-      plt.imshow(img)
-      plt.axis('off')
-
-      # Código para exportar en SVG
-      imgdata = StringIO()
-      fig.savefig(imgdata, format='svg')
-      imgdata.seek(0)
-      graph_conect = imgdata.getvalue()
-
 
 
       """ ESTRUCTURACIÓN PREVIA AL ENTRENAMIENTO DEL MODELO """
@@ -771,8 +754,8 @@ def run_red_neuronal(request):
       early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=90)
 
       #history = model.fit(train_ds, epochs=1000,
-      history = model.fit(train_ds, epochs=1000,
-                          validation_data=val_ds, verbose=0, callbacks=[early_stop])
+      history = model.fit(train_ds, epochs=800,
+                          validation_data=val_ds, verbose=1, callbacks=[early_stop])
 
 
       #### Visualizar los gráficos del entrenamiento
@@ -878,10 +861,10 @@ def run_red_neuronal(request):
       class_names = dataframe[['code_target', request.data["target_predecir"]]]
       class_names = class_names.sort_values('code_target')
       class_names_unique = class_names[['code_target', request.data["target_predecir"]]].drop_duplicates()
-      print(class_names_unique)
+      #print(class_names_unique)
       # Almacena los valores del target en una lista
       class_names = class_names_unique[request.data["target_predecir"]].values.tolist()
-      print(class_names)
+      #print(class_names)
 
       """ Número de salidas de la Red Neural (cantidad de opciones proporcionadas por el target) """
       cantidad_posibles_predicciones = len(class_names)
@@ -894,7 +877,7 @@ def run_red_neuronal(request):
                   dataframe[col] = pd.to_datetime(dataframe[col])
               except ValueError:
                   pass
-      print('\n', dataframe.dtypes)
+      #print('\n', dataframe.dtypes)
 
       # Se almacenan las columnas en variables según tipo de datos
       columns_numeric = dataframe.dtypes[(dataframe.dtypes == 'int64') | (dataframe.dtypes == 'float64') | (dataframe.dtypes == 'int8')].index.to_list()
@@ -915,10 +898,10 @@ def run_red_neuronal(request):
 
       # Se unen las columnas numéricas y categóricas
       all_columns_usable = columns_numeric + columns_string # Se utilizarán para crear el formulario de consultas
-      print("\nColumnas numéricas: ", columns_numeric)
-      print("\nColumnas características:", columns_string)
-      print("\nColumnas datetime: ", columns_datetime)
-      print("\nTodas las Columnas sin el target: ", all_columns_usable)
+      #print("\nColumnas numéricas: ", columns_numeric)
+      #print("\nColumnas características:", columns_string)
+      #print("\nColumnas datetime: ", columns_datetime)
+      #print("\nTodas las Columnas sin el target: ", all_columns_usable)
 
       # Elimina las columnas DateTime del dataframe
       for column in columns_datetime:
