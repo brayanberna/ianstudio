@@ -410,27 +410,12 @@ def run_red_neuronal(request):
     tf.keras.utils.plot_model(model, to_file='./frontend/public/files/Connectivity_graph.png', show_shapes=True, rankdir="LR")
     #keras.utils.vis_utils.plot_model(model, to_file='./frontend/public/files/Connectivity_graph.png', show_shapes=True, rankdir="LR")
 
-    # pasos para cargar la imagen y transformarla en svg
-    from io import StringIO
-    import matplotlib.image as mpimg
-
-    fig = plt.figure()
-    img = mpimg.imread('./frontend/public/files/Connectivity_graph.png')
-    plt.imshow(img)
-    plt.axis('off')
-
-    # Código para exportar en SVG
-    imgdata = StringIO()
-    fig.savefig(imgdata, format='svg')
-    imgdata.seek(0)
-    graph_conect = imgdata.getvalue()
-
 
 
     """ ENTRENAMIENTO DEL MODELO """
     early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=100, restore_best_weights=True)
 
-    history = model.fit(train_ds, epochs=200, validation_data=val_ds, verbose=1, callbacks=[early_stop])
+    history = model.fit(train_ds, epochs=100, validation_data=val_ds, verbose=1, callbacks=[early_stop])
 
 
     ### Gráficos del entrenamiento
@@ -476,7 +461,6 @@ def run_red_neuronal(request):
     # Transforma el Dataframe con los resultados del entrenamiento a json para enviarlos al frontend
     datos_hist_tail = json.loads(dataframe_hist_tail.to_json(orient='records'))
 
-
     # Resultados del entrenamiento con datos de testeo
     loss, accuracy = model.evaluate(test_ds)
     print("Accuracy", accuracy)
@@ -505,7 +489,7 @@ def run_red_neuronal(request):
 
     # Unión de los Dataframe creados anteriormente
     df_originals_predictions = test_labels_df.join(predicciones_df)
-
+    
 
     # Convierte el código asignado al texto original 
     for index, row in df_originals_predictions.iterrows():
@@ -524,7 +508,6 @@ def run_red_neuronal(request):
     matrix_graph.set(xlabel='Predicted',ylabel='Original')
     matrix_graph.set_yticklabels(class_names, rotation=0, va="center")
 
-
     # Código para exportar en SVG
     imgdata = StringIO()
     fig.savefig(imgdata, format='svg')
@@ -542,25 +525,18 @@ def run_red_neuronal(request):
     # Transforma el Dataframe a json para enviarlos al frontend
     df_originals_predictions_json = json.loads(df_originals_predictions.to_json(orient='records'))
 
-    print("GATITOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
-
 
     """ Guardando la Red Neuronal """
     model.save('modelo_red_neuronal')
-
-    print("MI BEBÉEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
 
     # Transforma la carpeta del modelo neuronal en un zip para poder descargarla por html
     import shutil
     shutil.make_archive('modelo_red_neuronal', 'zip', 'modelo_red_neuronal')
     
-    print("PERROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
-
     # Mueve el archivo.zip a las carpetas de react, fue la única forma de evitar que la página se actualizara
     from pathlib import Path
     Path("modelo_red_neuronal.zip").rename("./frontend/public/files/modelo_red_neuronal.zip")
 
-    print("HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 
     """ Se envían los datos al Frontend """
     data = [{
