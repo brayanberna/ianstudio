@@ -506,11 +506,14 @@ def run_red_neuronal(request):
     # Unión de los Dataframe creados anteriormente
     df_originals_predictions = test_labels_df.join(predicciones_df)
 
+    print("HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+
     # Convierte el código asignado al texto original 
     for index, row in df_originals_predictions.iterrows():
       df_originals_predictions['Original'][index] = class_names[row['Original']]
       df_originals_predictions['Predicciones'][index] = class_names[row['Predicciones']]
 
+    print("PERROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
 
     """ Matrix de confusión """
     from sklearn.metrics import confusion_matrix
@@ -522,6 +525,8 @@ def run_red_neuronal(request):
     matrix_graph = sns.heatmap(df_matrix, annot=True, cbar=False, cmap='Blues')
     matrix_graph.set(xlabel='Predicted',ylabel='Original')
     matrix_graph.set_yticklabels(class_names, rotation=0, va="center")
+
+    print("MI BEBÉEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
 
     # Código para exportar en SVG
     imgdata = StringIO()
@@ -539,6 +544,8 @@ def run_red_neuronal(request):
 
     # Transforma el Dataframe a json para enviarlos al frontend
     df_originals_predictions_json = json.loads(df_originals_predictions.to_json(orient='records'))
+
+    print("GATITOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
 
 
     """ Guardando la Red Neuronal """
