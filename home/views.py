@@ -757,10 +757,10 @@ def run_red_neuronal(request):
       early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=90)
 
       #history = model.fit(train_ds, epochs=1000, # local
-      history = model.fit(train_ds, epochs=400, # Producción
+      history = model.fit(train_ds, epochs=350, # Producción
                           validation_data=val_ds, verbose=0, callbacks=[early_stop])
 
-
+      print("wooooooooooooooooooooooooooooooooooo")
       #### Visualizar los gráficos del entrenamiento
       plots_history = plot_history(history)
 
