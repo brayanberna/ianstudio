@@ -273,7 +273,7 @@ def run_red_neuronal(request):
                 dataframe[col] = pd.to_datetime(dataframe[col])
             except ValueError:
                 pass
-    print('\n', dataframe.dtypes)
+    #print('\n', dataframe.dtypes)
 
 
     # Se almacenan las columnas en variables según tipo de datos
@@ -295,10 +295,10 @@ def run_red_neuronal(request):
 
     # Se unen las columnas numéricas y categóricas
     all_columns_usable = columns_numeric + columns_string # Se utilizarán para crear el formulario de consultas
-    print("\nColumnas numéricas: ", columns_numeric)
-    print("\nColumnas características:", columns_string)
-    print("\nColumnas datetime: ", columns_datetime)
-    print("\nTodas las Columnas sin el target: ", all_columns_usable)
+    #print("\nColumnas numéricas: ", columns_numeric)
+    #print("\nColumnas características:", columns_string)
+    #print("\nColumnas datetime: ", columns_datetime)
+    #print("\nTodas las Columnas sin el target: ", all_columns_usable)
 
     # Elimina las columnas DateTime del dataframe
     for column in columns_datetime:
@@ -405,9 +405,7 @@ def run_red_neuronal(request):
 
 
     """ Gráfico de conectividad """
-    from keras.utils.vis_utils import plot_model
     tf.keras.utils.plot_model(model, to_file='./frontend/public/files/Connectivity_graph.png', show_shapes=True, rankdir="LR")
-    #keras.utils.vis_utils.plot_model(model, to_file='./frontend/public/files/Connectivity_graph.png', show_shapes=True, rankdir="LR")
 
 
     """ ENTRENAMIENTO DEL MODELO """
@@ -426,7 +424,7 @@ def run_red_neuronal(request):
     plt.ylabel('accuracy')
     plt.xlabel('epoch')
     plt.legend(['Training', 'Validation'], loc='upper left')
-    plt.show()
+    #plt.show()
 
     # Código para exportar en SVG
     imgdata = StringIO()
@@ -441,7 +439,7 @@ def run_red_neuronal(request):
     plt.ylabel('loss')
     plt.xlabel('epoch')
     plt.legend(['Training', 'Validation'], loc='upper left')
-    plt.show()
+    #plt.show()
 
     # Código para exportar en SVG
     imgdata = StringIO()
@@ -512,6 +510,7 @@ def run_red_neuronal(request):
     imgdata.seek(0)
     graph3 = imgdata.getvalue()
 
+
     # Se crea el index del Dataframe anterior para una mejor visualización en el frontend
     # Crea la columna index
     df_originals_predictions[''] = range(1, len(df_originals_predictions) + 1)
@@ -547,7 +546,7 @@ def run_red_neuronal(request):
         'grafico1': graph1, # Gráfico 1 del entrenamiento
         'grafico2': graph2, # Gráfico 2 del entrenamiento
         'grafico3': graph3, # matrix de confusión
-        'graph_conect': graph_conect, # Gráfico de conectividad (diseño de la Red Neuronal)
+        #'graph_conect': graph_conect, # Gráfico de conectividad (diseño de la Red Neuronal)
         'datos_hist_tail': datos_hist_tail, # Datos del entrenamiento para ser visualizados en una tabla
         'loss': loss, # Datos del entrenamiento
         'mae': accuracy, # Datos del entrenamiento
@@ -684,14 +683,15 @@ def run_red_neuronal(request):
 
       """ MODELO DE LA RED NEURONAL """
       all_features = tf.keras.layers.concatenate(encoded_features)
-      x = tf.keras.layers.Dense(256, activation="relu")(all_features)
+      x = tf.keras.layers.Dense(64, activation="relu")(all_features)
+      #x = tf.keras.layers.Dense(64, activation="relu")(x)
       x = tf.keras.layers.Dropout(0.5)(x)
       output = tf.keras.layers.Dense(1)(x)
 
       model = tf.keras.Model(all_inputs, output)
 
 
-      optimizer = tf.keras.optimizers.RMSprop(0.0001)
+      optimizer = tf.keras.optimizers.RMSprop(0.001)
 
       model.compile(optimizer=optimizer,
                     loss='mse',
@@ -746,7 +746,7 @@ def run_red_neuronal(request):
           imgdata.seek(0)
           graph2 = imgdata.getvalue()
 
-          plt.show()
+          #plt.show()
           return [graph1, graph2]
 
 
@@ -754,7 +754,7 @@ def run_red_neuronal(request):
       early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=90)
 
       #history = model.fit(train_ds, epochs=1000,
-      history = model.fit(train_ds, epochs=800,
+      history = model.fit(train_ds, epochs=700,
                           validation_data=val_ds, verbose=1, callbacks=[early_stop])
 
 
@@ -775,9 +775,9 @@ def run_red_neuronal(request):
 
       #### Resultados del entrenamiento con datos de testeo
       loss, mae, mse = model.evaluate(test_ds)
-      print("loss", loss)
-      print("mae", mae)
-      print("mse", mse)
+      #print("loss", loss)
+      #print("mae", mae)
+      #print("mse", mse)
 
       """ FIN DEL ENTRENAMIENTO """
 
@@ -829,7 +829,7 @@ def run_red_neuronal(request):
       data = [{
         'grafico1': plots_history[0], # Gráfico 1 del entrenamiento
         'grafico2': plots_history[1], # Gráfico 2 del entrenamiento
-        'graph_conect': graph_conect, # Gráfico de conectividad (diseño de la Red Neuronal)
+        #'graph_conect': graph_conect, # Gráfico de conectividad (diseño de la Red Neuronal)
         'datos_hist_tail': datos_hist_tail, # Datos del entrenamiento para ser visualizados en una tabla
         'loss': loss, # Datos del entrenamiento
         'mae': mae, # Datos del entrenamiento
@@ -919,9 +919,9 @@ def run_red_neuronal(request):
       len_train_dataset = len(train) # Se almacena en una variable la cant. de datos de entrenamiento para enviarlo al front
       len_val_dataset = len(val) # Se almacena en una variable la cant. de datos de prueba para enviarlo al front
       len_test_dataset = len(test) # Se almacena en una variable la cant. de datos de prueba para enviarlo al front
-      print(len(train), '\n training examples')
-      print(len(val), '\n validation examples')
-      print(len(test), '\n test examples')
+      #print(len(train), '\n training examples')
+      #print(len(val), '\n validation examples')
+      #print(len(test), '\n test examples')
 
       # Crea una canalización de entrada usando tf.data
       def df_to_dataset(dataframe, shuffle=True, batch_size=32):
@@ -1009,11 +1009,8 @@ def run_red_neuronal(request):
 
 
       """ Gráfico de conectividad """
-      from tensorflow.keras.utils import plot_model
       tf.keras.utils.plot_model(model, to_file='./frontend/public/files/Connectivity_graph.png', show_shapes=True, rankdir="LR")
 
-      #from keras.utils.vis_utils import plot_model
-      #plot_model(model, to_file='./frontend/public/files/Connectivity_graph.png', show_shapes=True, rankdir="LR")
 
       """ ENTRENAMIENTO DEL MODELO """
       early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=100, restore_best_weights=True)
@@ -1031,7 +1028,7 @@ def run_red_neuronal(request):
       plt.ylabel('accuracy')
       plt.xlabel('epoch')
       plt.legend(['Training', 'Validation'], loc='upper left')
-      plt.show()
+      #plt.show()
 
       # Código para exportar en SVG
       imgdata = StringIO()
@@ -1046,7 +1043,7 @@ def run_red_neuronal(request):
       plt.ylabel('loss')
       plt.xlabel('epoch')
       plt.legend(['Training', 'Validation'], loc='upper left')
-      plt.show()
+      #plt.show()
 
       # SVG
       imgdata = StringIO()
