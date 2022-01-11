@@ -683,15 +683,17 @@ def run_red_neuronal(request):
 
       """ MODELO DE LA RED NEURONAL """
       all_features = tf.keras.layers.concatenate(encoded_features)
-      x = tf.keras.layers.Dense(64, activation="relu")(all_features)
-      #x = tf.keras.layers.Dense(64, activation="relu")(x)
-      #x = tf.keras.layers.Dropout(0.5)(x)
+      #x = tf.keras.layers.Dense(64, activation="relu")(all_features) # Local
+      x = tf.keras.layers.Dense(32, activation="relu")(all_features)  # Producción
+      #x = tf.keras.layers.Dense(64, activation="relu")(x) # Local
+      #x = tf.keras.layers.Dropout(0.5)(x) # Local
       output = tf.keras.layers.Dense(1)(x)
 
       model = tf.keras.Model(all_inputs, output)
 
 
-      optimizer = tf.keras.optimizers.RMSprop(0.001)
+      #optimizer = tf.keras.optimizers.RMSprop(0.0001) # Local
+      optimizer = tf.keras.optimizers.RMSprop(0.001) # Producción
 
       model.compile(optimizer=optimizer,
                     loss='mse',
@@ -753,8 +755,8 @@ def run_red_neuronal(request):
       """ ENTRENAMIENTO DEL MODELO """
       early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=90)
 
-      #history = model.fit(train_ds, epochs=1000,
-      history = model.fit(train_ds, epochs=500,
+      #history = model.fit(train_ds, epochs=1000, # local
+      history = model.fit(train_ds, epochs=500, # Producción
                           validation_data=val_ds, verbose=0, callbacks=[early_stop])
 
 
