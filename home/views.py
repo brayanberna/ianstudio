@@ -406,6 +406,8 @@ def run_red_neuronal(request):
 
 
     """ Gráfico de conectividad """
+    from tensorflow.keras.utils import plot_model
+    from keras.utils import plot_model
     tf.keras.utils.plot_model(model, to_file='./frontend/public/files/Connectivity_graph.png', show_shapes=True, rankdir="LR")
 
     # pasos para cargar la imagen y transformarla en svg
