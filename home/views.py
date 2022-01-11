@@ -233,8 +233,6 @@ def run_red_neuronal(request):
   if os.path.isfile('./frontend/public/files/Connectivity_graph.png'):
     os.remove('./frontend/public/files/Connectivity_graph.png')
 
-  """ if os.path.isfile('./frontend/src/images/Connectivity_graph.png'):
-    os.remove('./frontend/src/images/Connectivity_graph.png') """
 
   # Si la carpeta existe, lo elimina (para evitar errores)
   if os.path.isfile('./frontend/public/files/modelo_red_neuronal.zip'):
@@ -557,7 +555,7 @@ def run_red_neuronal(request):
     }]
 
   else:
-    if(dataframe[request.data["target_predecir"]].dtype != object):
+    if((dataframe[request.data["target_predecir"]].dtype != object) and (dataframe[request.data["target_predecir"]].dtype == 'float64')):
       # Se Reemplazan los espacios en el nombre de las columna por guiones bajos
       dataframe.columns = dataframe.columns.str.replace(' ','_')
 
@@ -571,7 +569,7 @@ def run_red_neuronal(request):
             except ValueError:
                 pass
       #print('\nVisualización por tipo de datos de cada columna del dataframe:')
-      #print(dataframe.dtypes)
+      print(dataframe.dtypes)
 
       #### Se almacenan las columnas en variables según tipo de datos
       columns_numeric = dataframe.dtypes[(dataframe.dtypes == 'int64') | (dataframe.dtypes == 'float64')].index.to_list()
@@ -760,7 +758,7 @@ def run_red_neuronal(request):
       history = model.fit(train_ds, epochs=350, # Producción
                           validation_data=val_ds, verbose=0, callbacks=[early_stop])
 
-      print("wooooooooooooooooooooooooooooooooooo")
+
       #### Visualizar los gráficos del entrenamiento
       plots_history = plot_history(history)
 
@@ -847,7 +845,7 @@ def run_red_neuronal(request):
         'tipo_red_neuronal': 'number', # Tipo de Red Neuronal
       }]
 
-    if(dataframe[request.data["target_predecir"]].dtype == object):
+    else:
       # Se Reemplazan los espacios en el nombre de las columna por guiones bajos
       dataframe.columns = dataframe.columns.str.replace(' ','_')
 
