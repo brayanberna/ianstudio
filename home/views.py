@@ -878,7 +878,7 @@ def run_red_neuronal(request):
                   dataframe[col] = pd.to_datetime(dataframe[col])
               except ValueError:
                   pass
-      #print('\n', dataframe.dtypes)
+      print('\n', dataframe.dtypes)
 
       # Se almacenan las columnas en variables según tipo de datos
       columns_numeric = dataframe.dtypes[(dataframe.dtypes == 'int64') | (dataframe.dtypes == 'float64') | (dataframe.dtypes == 'int8')].index.to_list()
