@@ -506,14 +506,12 @@ def run_red_neuronal(request):
     # Unión de los Dataframe creados anteriormente
     df_originals_predictions = test_labels_df.join(predicciones_df)
 
-    print("HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 
     # Convierte el código asignado al texto original 
     for index, row in df_originals_predictions.iterrows():
       df_originals_predictions['Original'][index] = class_names[row['Original']]
       df_originals_predictions['Predicciones'][index] = class_names[row['Predicciones']]
 
-    print("PERROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
 
     """ Matrix de confusión """
     from sklearn.metrics import confusion_matrix
@@ -526,7 +524,6 @@ def run_red_neuronal(request):
     matrix_graph.set(xlabel='Predicted',ylabel='Original')
     matrix_graph.set_yticklabels(class_names, rotation=0, va="center")
 
-    print("MI BEBÉEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
 
     # Código para exportar en SVG
     imgdata = StringIO()
@@ -551,14 +548,19 @@ def run_red_neuronal(request):
     """ Guardando la Red Neuronal """
     model.save('modelo_red_neuronal')
 
+    print("MI BEBÉEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
+
     # Transforma la carpeta del modelo neuronal en un zip para poder descargarla por html
     import shutil
     shutil.make_archive('modelo_red_neuronal', 'zip', 'modelo_red_neuronal')
     
+    print("PERROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
+
     # Mueve el archivo.zip a las carpetas de react, fue la única forma de evitar que la página se actualizara
     from pathlib import Path
     Path("modelo_red_neuronal.zip").rename("./frontend/public/files/modelo_red_neuronal.zip")
 
+    print("HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 
     """ Se envían los datos al Frontend """
     data = [{
