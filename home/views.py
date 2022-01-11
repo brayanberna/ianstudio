@@ -685,7 +685,7 @@ def run_red_neuronal(request):
       all_features = tf.keras.layers.concatenate(encoded_features)
       x = tf.keras.layers.Dense(64, activation="relu")(all_features)
       #x = tf.keras.layers.Dense(64, activation="relu")(x)
-      x = tf.keras.layers.Dropout(0.5)(x)
+      #x = tf.keras.layers.Dropout(0.5)(x)
       output = tf.keras.layers.Dense(1)(x)
 
       model = tf.keras.Model(all_inputs, output)
@@ -754,7 +754,7 @@ def run_red_neuronal(request):
       early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=90)
 
       #history = model.fit(train_ds, epochs=1000,
-      history = model.fit(train_ds, epochs=700,
+      history = model.fit(train_ds, epochs=600,
                           validation_data=val_ds, verbose=1, callbacks=[early_stop])
 
 
