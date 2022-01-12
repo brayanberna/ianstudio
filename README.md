@@ -1,4 +1,4 @@
-### Prototipo de una Plataforma de Inteligencia Artificial basado en Modelos Predictivos de Tensorflow para apoyar el Proceso de toma de Decisiones en múltiples áreas. 
+### Prototipo de una plataforma de inteligencia artificial basado en modelos predictivos de Tensorflow para apoyar el proceso de toma de decisiones en múltiples áreas. 
 Prototipo de una plataforma de inteligencia artificial que permite desarrollar rápidamente modelos predictivos con código trasladable a otros sistemas informáticos desarrollados en python o javascript. Permite apoyar la toma de decisiones a usuarios expertos y no expertos. Esta solución permite acercar las redes neuronales a usos prácticos sin que las personas deban invertir tiempo en programar sus propios modelos predictivos.
 
 ### Live Preview:
