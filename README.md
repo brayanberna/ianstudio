@@ -32,7 +32,7 @@
 ![sistema8](https://user-images.githubusercontent.com/61950433/149114148-42cc4afd-5bb2-4dd1-bf24-4bc8bb34f683.PNG)
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/61950433/149114304-a300c5c9-7fa2-46f2-83c5-db0e0fc9f066.PNG" height="200px"/>
+  <img src="https://user-images.githubusercontent.com/61950433/149114304-a300c5c9-7fa2-46f2-83c5-db0e0fc9f066.PNG" height="400px"/>
 </p>
 
 <p align="center">
