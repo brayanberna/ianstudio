@@ -20,7 +20,7 @@
 3. Seleccione la variable a predecir.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/61950433/149113105-fd627055-a953-4295-a2e7-724e7c750d9f.PNG" alt="Sublime's custom image"/>
+  <img src="https://user-images.githubusercontent.com/61950433/149113105-fd627055-a953-4295-a2e7-724e7c750d9f.PNG" height="400px"/>
 </p>
 
 4. Entrene el Modelo
