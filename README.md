@@ -30,7 +30,10 @@
 ![sistema6](https://user-images.githubusercontent.com/61950433/149113794-4500d513-88d4-4234-b1ac-e09ddadbd1cb.PNG)
 ![sistema7](https://user-images.githubusercontent.com/61950433/149113962-30b0a861-33be-4f80-a467-2a5ea4cce055.PNG)
 ![sistema8](https://user-images.githubusercontent.com/61950433/149114148-42cc4afd-5bb2-4dd1-bf24-4bc8bb34f683.PNG)
-![sistema9](https://user-images.githubusercontent.com/61950433/149114304-a300c5c9-7fa2-46f2-83c5-db0e0fc9f066.PNG)
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/61950433/149114304-a300c5c9-7fa2-46f2-83c5-db0e0fc9f066.PNG" height="200px"/>
+</p>
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/61950433/149114447-dc8e13e7-339a-4ea6-a9f8-56c43194a8c0.PNG" alt="Sublime's custom image"/>
