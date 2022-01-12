@@ -40,8 +40,6 @@
   <img src="https://user-images.githubusercontent.com/61950433/149114591-ca9f0830-9ad1-4156-a4ef-c581bf72cf57.PNG" alt="Sublime's custom image"/>
 </p>
 
-![sistema10](https://user-images.githubusercontent.com/61950433/149114447-dc8e13e7-339a-4ea6-a9f8-56c43194a8c0.PNG)
-![sistema11](https://user-images.githubusercontent.com/61950433/149114591-ca9f0830-9ad1-4156-a4ef-c581bf72cf57.PNG)
 6. Utilice el modelo entrenado para hacer predicciones.
 ![sistema12](https://user-images.githubusercontent.com/61950433/149114733-947049d4-6676-4c2a-bedb-79ef71ee9b4a.PNG)
 ![sistema13](https://user-images.githubusercontent.com/61950433/149115335-933e3d29-04d7-4610-9123-03d4d772023f.PNG)
