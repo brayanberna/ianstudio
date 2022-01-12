@@ -36,11 +36,11 @@
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/61950433/149114447-dc8e13e7-339a-4ea6-a9f8-56c43194a8c0.PNG" alt="Sublime's custom image"/>
+  <img src="https://user-images.githubusercontent.com/61950433/149114447-dc8e13e7-339a-4ea6-a9f8-56c43194a8c0.PNG" height="400px"/>
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/61950433/149114591-ca9f0830-9ad1-4156-a4ef-c581bf72cf57.PNG" alt="Sublime's custom image"/>
+  <img src="https://user-images.githubusercontent.com/61950433/149114591-ca9f0830-9ad1-4156-a4ef-c581bf72cf57.PNG" height="400px"/>
 </p>
 
 6. Utilice el modelo entrenado para hacer predicciones.
