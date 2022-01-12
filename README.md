@@ -23,6 +23,7 @@
 <p align="center">
   <img src="https://user-images.githubusercontent.com/61950433/149113105-fd627055-a953-4295-a2e7-724e7c750d9f.PNG" alt="Sublime's custom image"/>
 </p>
+
 4. Entrene el Modelo
 ![sistema4](https://user-images.githubusercontent.com/61950433/149113402-67ad4ff0-7995-454d-9c65-b000a7030af0.PNG)
 5. Evalúe la efectividad del modelo.
