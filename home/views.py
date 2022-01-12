@@ -410,7 +410,7 @@ def run_red_neuronal(request):
     early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=100, restore_best_weights=True)
 
     #history = model.fit(train_ds, epochs=200, validation_data=val_ds, verbose=1, callbacks=[early_stop]) # Local
-    history = model.fit(train_ds, epochs=100, validation_data=val_ds, verbose=1, callbacks=[early_stop]) # Producción
+    history = model.fit(train_ds, epochs=100, validation_data=val_ds, verbose=0, callbacks=[early_stop]) # Producción
 
 
     ### Gráficos del entrenamiento
@@ -569,7 +569,7 @@ def run_red_neuronal(request):
             except ValueError:
                 pass
       #print('\nVisualización por tipo de datos de cada columna del dataframe:')
-      print(dataframe.dtypes)
+      #print(dataframe.dtypes)
 
       #### Se almacenan las columnas en variables según tipo de datos
       columns_numeric = dataframe.dtypes[(dataframe.dtypes == 'int64') | (dataframe.dtypes == 'float64')].index.to_list()
@@ -878,7 +878,7 @@ def run_red_neuronal(request):
                   dataframe[col] = pd.to_datetime(dataframe[col])
               except ValueError:
                   pass
-      print('\n', dataframe.dtypes)
+      #print('\n', dataframe.dtypes)
 
       # Se almacenan las columnas en variables según tipo de datos
       columns_numeric = dataframe.dtypes[(dataframe.dtypes == 'int64') | (dataframe.dtypes == 'float64') | (dataframe.dtypes == 'int8')].index.to_list()
