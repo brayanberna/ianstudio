@@ -1,13 +1,13 @@
 # Se desarrolla una prueba Full Stack Developer de Walmart.
-Proyecto de práctica desarrollado en Django.
+Prototipo de una plataforma de inteligencia artificial que permite desarrollar rápidamente modelos predictivos con código trasladable a otros sistemas informáticos desarrollados en python o javascript. Permite apoyar la toma de decisiones a usuarios expertos y no expertos. Esta solución permite acercar las redes neuronales a usos prácticos sin que las personas deban invertir tiempo en programar sus propios modelos predictivos.
 
 ## Live Preview:
 - **https://ianstudio.herokuapp.com/**
 
 ## Herramientas usadas en el proyecto:
 - **[Python 3.9](https://www.python.org/)**  Lenguaje de programación.
-- **[React](https://es.reactjs.org/)** Una biblioteca de JavaScript para construir interfaces de usuario
-- **[Django Rest Framework](https://www.django-rest-framework.org/)**  Framework de desarrollo web de código abierto, escrito en Python.
+- **[React](https://es.reactjs.org/)** Biblioteca de JavaScript para construir interfaces de usuario
+- **[Django Rest Framework](https://www.django-rest-framework.org/)**  Framework de herramientas potentes y flexibles para crear API web.
 - **[Boxicons](https://boxicons.com/)**  Framework de iconos vectoriales.
 - **[TensorFlow](https://www.postgresql.org/)** Plataforma de código abierto de aprendizaje automático.
 
