@@ -18,7 +18,6 @@
 2. Analice el conjunto de datos.
 ![sistema2](https://user-images.githubusercontent.com/61950433/149112914-29d47b4d-27b3-484c-b1b9-bbd69a428053.PNG)
 3. Seleccione la variable a predecir.
-![sistema3](https://user-images.githubusercontent.com/61950433/149113105-fd627055-a953-4295-a2e7-724e7c750d9f.PNG)
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/61950433/149113105-fd627055-a953-4295-a2e7-724e7c750d9f.PNG" alt="Sublime's custom image"/>
@@ -32,6 +31,15 @@
 ![sistema7](https://user-images.githubusercontent.com/61950433/149113962-30b0a861-33be-4f80-a467-2a5ea4cce055.PNG)
 ![sistema8](https://user-images.githubusercontent.com/61950433/149114148-42cc4afd-5bb2-4dd1-bf24-4bc8bb34f683.PNG)
 ![sistema9](https://user-images.githubusercontent.com/61950433/149114304-a300c5c9-7fa2-46f2-83c5-db0e0fc9f066.PNG)
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/61950433/149114447-dc8e13e7-339a-4ea6-a9f8-56c43194a8c0.PNG" alt="Sublime's custom image"/>
+</p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/61950433/149114591-ca9f0830-9ad1-4156-a4ef-c581bf72cf57.PNG" alt="Sublime's custom image"/>
+</p>
+
 ![sistema10](https://user-images.githubusercontent.com/61950433/149114447-dc8e13e7-339a-4ea6-a9f8-56c43194a8c0.PNG)
 ![sistema11](https://user-images.githubusercontent.com/61950433/149114591-ca9f0830-9ad1-4156-a4ef-c581bf72cf57.PNG)
 6. Utilice el modelo entrenado para hacer predicciones.
