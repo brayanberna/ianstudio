@@ -5,10 +5,19 @@
 ### Live Preview:
 - **https://ianstudio.herokuapp.com/**
 
-### Datos de ejemplos para predecir:
-- **https://ianstudio.herokuapp.com/**
-- **[Conjunto de datos Iris Species](https://github.com/brayanberna/ianstudio/files/7917698/iris_flower.xlsx)**
-  - **Columna a predecir: Target**
+### Conjunto de datos de ejemplos:
+- **[Iris Species](https://github.com/brayanberna/ianstudio/files/7917698/iris_flower.xlsx)**
+  - **Columna a predecir: Species**
+
+- **[Titanic](https://github.com/brayanberna/ianstudio/files/7917736/titanic.xlsx)**
+  - **Columna a predecir: Survived**
+
+- **[Eficiencia de gasolina](https://github.com/brayanberna/ianstudio/files/7917737/MPG.xlsx)**
+  - **Columna a predecir: MPG**
+
+- **[Pingüinos del archipiélago Palmer](https://github.com/brayanberna/ianstudio/files/7917756/penguins.xlsx)**
+  - **Columna a predecir: Species**
+
 
 ### Herramientas usadas en el proyecto:
 - **[Python 3.9](https://www.python.org/)**  Lenguaje de programación.
