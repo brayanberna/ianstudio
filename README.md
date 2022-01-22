@@ -7,7 +7,8 @@
 
 ### Datos de ejemplos para predecir:
 - **https://ianstudio.herokuapp.com/**
-- **[iris_flower.xlsx](https://github.com/brayanberna/ianstudio/files/7917698/iris_flower.xlsx)**
+- **[Conjunto de datos Iris Species](https://github.com/brayanberna/ianstudio/files/7917698/iris_flower.xlsx)**
+  - **Columna a predecir: Target**
 
 ### Herramientas usadas en el proyecto:
 - **[Python 3.9](https://www.python.org/)**  Lenguaje de programación.
