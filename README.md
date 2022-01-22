@@ -4,7 +4,7 @@
 
 ### Live Preview:
 - **https://ianstudio.herokuapp.com/**
-<br> <br> <br>
+<br> <br> <br> <br>
 
 ### Conjunto de datos de ejemplos:
 - **[Iris Species](https://github.com/brayanberna/ianstudio/files/7917698/iris_flower.xlsx)**
@@ -18,7 +18,7 @@
 
 - **[Pingüinos del archipiélago Palmer](https://github.com/brayanberna/ianstudio/files/7917756/penguins.xlsx)**
   - **Columna a predecir: Species**
-<br> <br>
+<br> <br> <br> <br>
 
 ### Herramientas usadas en el proyecto:
 - **[Python 3.9](https://www.python.org/)**  Lenguaje de programación.
