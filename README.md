@@ -5,6 +5,10 @@
 ### Live Preview:
 - **https://ianstudio.herokuapp.com/**
 
+### Datos de ejemplos para predecir:
+- **https://ianstudio.herokuapp.com/**
+- **[iris_flower.xlsx](https://github.com/brayanberna/ianstudio/files/7917698/iris_flower.xlsx)**
+
 ### Herramientas usadas en el proyecto:
 - **[Python 3.9](https://www.python.org/)**  Lenguaje de programación.
 - **[React](https://es.reactjs.org/)** Biblioteca de JavaScript para construir interfaces de usuario
