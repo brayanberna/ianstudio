@@ -4,7 +4,7 @@
 
 ### Live Preview:
 - **https://ianstudio.herokuapp.com/**
-<br> <br>
+<br> <br> <br>
 
 ### Conjunto de datos de ejemplos:
 - **[Iris Species](https://github.com/brayanberna/ianstudio/files/7917698/iris_flower.xlsx)**
@@ -27,7 +27,8 @@
 - **[Boxicons](https://boxicons.com/)**  Framework de iconos vectoriales.
 - **[TensorFlow](https://www.postgresql.org/)** Plataforma de código abierto de aprendizaje automático.
 
-<br> <br>
+<br> <br> <br>
+
 ### Estructuración del sitio web:
 #### 1. Cargue el conjunto de datos desde un archivo csv
 ![sistema1](https://user-images.githubusercontent.com/61950433/149112539-418ea857-eb2e-4e24-965b-e26e5d6042de.PNG)
