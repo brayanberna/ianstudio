@@ -73,4 +73,4 @@
 ![sistema12](https://user-images.githubusercontent.com/61950433/149114733-947049d4-6676-4c2a-bedb-79ef71ee9b4a.PNG) <br> <br>
 
 #### 7. Código de ejemplo para Utilizar el modelo entrenado en otros sistemas desarrollados con Python.
-![sistema13](https://user-images.githubusercontent.com/61950433/149115335-933e3d29-04d7-4610-9123-03d4d772023f.PNG) <br> <br>
+![sistema13](https://user-images.githubusercontent.com/61950433/149115335-933e3d29-04d7-4610-9123-03d4d772023f.PNG)
