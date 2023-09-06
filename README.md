@@ -25,7 +25,7 @@
 - **[React](https://es.reactjs.org/)** Biblioteca de JavaScript para construir interfaces de usuario
 - **[Django Rest Framework](https://www.django-rest-framework.org/)**  Framework de herramientas potentes y flexibles para crear API web.
 - **[Boxicons](https://boxicons.com/)**  Framework de iconos vectoriales.
-- **[TensorFlow](https://www.postgresql.org/)** Plataforma de código abierto de aprendizaje automático.
+- **[TensorFlow](https://www.tensorflow.org/)** Plataforma de código abierto de aprendizaje automático.
 - **[Vanilla CSS](https://www.w3schools.com/css/)** CSS puro.
 
 <br> <br> <br>
